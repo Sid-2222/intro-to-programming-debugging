@@ -95,7 +95,7 @@ function setup() {
   attempts = 0;
 
   // Enable the input and submit button
-  submitButton.disabled = false; // typo mistake bug 7
+  submitButton.disabled = false; // typo mistake in disabled bug 7
   guessInput.disabled = false;
   hideAllMessages();
 
