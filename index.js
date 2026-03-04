@@ -38,14 +38,14 @@ function checkGuess() {
     correctMessage.style.display = "";
     submitButton.disabled = true;
     guessInput.disabled = true;
-    resetButton.style.display = ""; // added reset button on correct guess bug 1
+    resetButton.style.display = ""; //added reset button on correct guess bug 1
   }
 
   if (guess !== targetNumber) {
     if (guess < targetNumber) {
       tooLowMessage.style.display = "";
     } else {
-      // its bigger so tooHighMessage bug 2
+      //its bigger so tooHighMessage bug 2
       tooHighMessage.style.display = "";
     }
 
@@ -53,11 +53,12 @@ function checkGuess() {
 
     numberOfGuessesMessage.style.display = "";
 
-    //stretch goal //
+    //stretch goal//
 
     if (guess < 1 || guess > 99) {
       alert("Please enter a number between 1 and 99.");
       guessInput.value = "";
+      attempts -=1;
       return;
     }
 
@@ -66,13 +67,13 @@ function checkGuess() {
     } else {
       numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
     }
-    //stretch goal end
+    //stretch goal end.
   }
-  // === equalto for strict comparison not ==== bug 3
+  //  === equalto for strict comparison not ==== bug 3
   if (attempts === maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
-    maxGuessesMessage.style.display = ""; // added max guess message which never used before bug 8
+    maxGuessesMessage.style.display = ""; //  added max guess message which never used before bug 8
     resetButton.style.display = "";
   }
 
@@ -80,21 +81,21 @@ function checkGuess() {
 }
 
 function hideAllMessages() {
-  // its have to be < not <= whan elementIndex starts from 0 bug 4
+  //  its have to be < not <= whan elementIndex starts from 0 bug 4
   for (let elementIndex = 0; elementIndex < messages.length; elementIndex++) {
     messages[elementIndex].style.display = "none";
   }
 }
-// function spelling mistake bug 5
+//  function spelling mistake bug 5
 function setup() {
   // Get random number
   targetNumber = getRandomNumber(1, 100);
   console.log(`target number: ${targetNumber}`);
 
-  // Reset number of attempts bug 6
+  //  Reset number of attempts bug 6
   attempts = 0;
 
-  // Enable the input and submit button
+  //  Enable the input and submit button
   submitButton.disabled = false; // typo mistake in disabled bug 7
   guessInput.disabled = false;
   hideAllMessages();
